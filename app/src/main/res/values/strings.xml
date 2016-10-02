@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">HabitTracker</string>
+    <string name="addHabitButtonText">Add</string>
+    <string name="allAddHabitsTitleText">All/Add Habits</string>
+    <string name="todaysHabitsTitleText">Today\'s Habits</string>
+    <string name="goToTodaysHabitsButtonText">Today\'s Habits</string>
+    <string name="goToAllAddHabitsButtonText">All/Add Habits</string>
+</resources>
