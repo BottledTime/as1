@@ -18,14 +18,31 @@
 
 package com.example.derekshultz.as1;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class TodaysHabitsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.alladdhabits);
+        setContentView(R.layout.todayshabits);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        //Inflates the menu this adds to the action bar if it is present
+        getMenuInflater().inflate(R.menu.todayshabitsmenu, menu);
+        return true;
+    }
+
+    public void goToAllAddHabits(MenuItem item) {
+        Toast.makeText(this, "All/Add Habits", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(TodaysHabitsActivity.this, AllAddHabitsActivity.class);
+        startActivity(intent);
     }
 }
