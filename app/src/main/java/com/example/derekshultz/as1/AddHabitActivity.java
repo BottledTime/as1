@@ -79,7 +79,8 @@ public class AddHabitActivity extends AppCompatActivity {
     public Calendar getInputStartDate() {
         DatePicker startDateView = (DatePicker) findViewById(R.id.startDatePicker);
         Calendar startDateReceived = Calendar.getInstance();
-        startDateReceived.set(startDateView.getYear(), startDateView.getMonth(), startDateView.getDayOfMonth());
+        startDateReceived.set(startDateView.getYear(), startDateView.getMonth(),
+                startDateView.getDayOfMonth(), 0, 0, 0);
         return startDateReceived;
     }
 

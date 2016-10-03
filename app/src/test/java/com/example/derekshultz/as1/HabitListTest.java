@@ -1,5 +1,7 @@
 package com.example.derekshultz.as1;
 
+import android.net.sip.SipAudioCall;
+
 import org.junit.*;
 
 import java.util.ArrayList;
@@ -94,6 +96,48 @@ public class HabitListTest {
         habitList.removeHabit(habit);
         assertEquals(habitList.getHabits().size(), 0);
         assertFalse(habitList.getHabits().contains(habit));
+    }
+
+    boolean updated = false;
+
+    @Test
+    public void testNotifyListeners() {
+        updated = false;
+        Listener l = new Listener() {
+            public void update() {
+                HabitListTest.this.updated = true;
+            }
+        };
+        habitList.addListener(l);
+        try {
+            habitList.addHabit(habit);
+            assertTrue(true);
+        } catch (DuplicateHabitNameException e) {
+            assertTrue(false);
+        }
+        assertTrue(this.updated);
+        updated = false;
+        habitList.removeHabit(habit);
+        assertTrue(this.updated);
+    }
+
+    @Test
+    public void testRemoveListeners() {
+        updated = false;
+        Listener l = new Listener() {
+            public void update() {
+                HabitListTest.this.updated = true;
+            }
+        };
+        habitList.addListener(l);
+        habitList.removeListener(l);
+        try {
+            habitList.addHabit(habit);
+            assertTrue(true);
+        } catch (DuplicateHabitNameException e) {
+            assertTrue(false);
+        }
+        assertFalse(this.updated);
     }
 
 }

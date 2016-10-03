@@ -7,9 +7,11 @@ import java.util.ArrayList;
  */
 public class HabitList {
     private ArrayList<Habit> habitList;
+    private ArrayList<Listener> listeners;
 
     public HabitList() {
         habitList = new ArrayList<Habit>();
+        listeners = new ArrayList<Listener>();
     }
 
     public void addHabit(Habit habit) throws DuplicateHabitNameException {
@@ -19,6 +21,7 @@ public class HabitList {
             }
         }
         habitList.add(habit);
+        notifyListeners();
     }
 
     public ArrayList<Habit> getHabits() {
@@ -27,5 +30,20 @@ public class HabitList {
 
     public void removeHabit(Habit habit) {
         habitList.remove(habit);
+        notifyListeners();
+    }
+
+    public void notifyListeners() {
+        for (Listener listener: listeners) {
+            listener.update();
+        }
+    }
+
+    public void addListener(Listener l) {
+        listeners.add(l);
+    }
+
+    public void removeListener(Listener l) {
+        listeners.remove(l);
     }
 }

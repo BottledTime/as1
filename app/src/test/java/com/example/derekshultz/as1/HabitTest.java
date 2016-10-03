@@ -134,4 +134,11 @@ public class HabitTest {
         }
     }
 
+    @Test
+    public void testToString() {
+        assertTrue(habit.toString().equals("Habit name: " + habitName + "\nStart date: "
+                + startDate.getTime().toString() + "\nDays of Week: " + daysOfWeek.toString() +
+                "\nNumber of Fulfillments: " + 0 + "\nCompleted today: " + false));
+    }
+
 }

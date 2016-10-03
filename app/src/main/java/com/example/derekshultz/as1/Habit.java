@@ -2,6 +2,7 @@ package com.example.derekshultz.as1;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Timer;
 
 /**
  * Created by derekshultz on 2016-10-01.
@@ -45,7 +46,7 @@ public class Habit {
     public void addCompletion() {
         this.completionsList.add(habitName + " was completed on " + Calendar.getInstance().getTime().toString() + ".");
         this.setNumberOfFulfillments();
-
+        this.setCompletedToday(true);
     }
 
     public ArrayList<String> getCompletionsList() {
@@ -71,5 +72,11 @@ public class Habit {
 
     public Calendar getStartDate() {
         return startDate;
+    }
+
+    public String toString() {
+        return "Habit name: " + getName() + "\nStart date: " + startDate.getTime().toString() +
+                "\nDays of Week: " + daysOfWeek.toString() + "\nNumber of Fulfillments: " +
+                getNumberOfFullfilments() + "\nCompleted today: " + completedToday;
     }
 }
