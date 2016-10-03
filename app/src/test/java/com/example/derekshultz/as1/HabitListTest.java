@@ -1,7 +1,5 @@
 package com.example.derekshultz.as1;
 
-import android.net.sip.SipAudioCall;
-
 import org.junit.*;
 
 import java.util.ArrayList;

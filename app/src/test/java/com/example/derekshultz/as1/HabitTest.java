@@ -1,14 +1,9 @@
 package com.example.derekshultz.as1;
 
-import android.provider.Settings;
-
 import org.junit.*;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.InvalidPropertiesFormatException;
-import java.util.Scanner;
-import java.util.StringTokenizer;
 
 import static org.junit.Assert.*;
 

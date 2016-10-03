@@ -1,7 +1,7 @@
 package com.example.derekshultz.as1;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,21 +14,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.lang.reflect.Type;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 public class AllHabitsActivity extends AppCompatActivity {
 
@@ -64,25 +54,7 @@ public class AllHabitsActivity extends AppCompatActivity {
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-//                Dialog dialog = new Dialog(AllHabitsActivity.this);
-//                dialog.setContentView(R.layout.remove_dialog);
-//                dialog.setTitle("This is my custom dialog box");
-//                dialog.setCancelable(true);
-//                ListView completionsListView = (ListView) findViewById(R.id.removableCompletionsListView);
-//                Collection<String> completions = list.get(position).getCompletionsList();
-//                final ArrayList<String> completionList = new ArrayList<String>(completions);
-//                final ArrayAdapter<String> completionAdapter = new ArrayAdapter<String>(AllHabitsActivity.this, android.R.layout.simple_list_item_1, completionList);
-//                completionsListView.setAdapter(completionAdapter);
-//
-//                HabitListController.getHabitList().addListener(new Listener() {
-//                    @Override
-//                    public void update() {
-//                        completionList.clear();
-//                        Collection<String> habits = completion;
-//                        completionList.addAll(habits);
-//                        completionAdapter.notifyDataSetChanged();
-//                    }
-//                });
+
 
                 AlertDialog.Builder adb = new AlertDialog.Builder(AllHabitsActivity.this);
                 adb.setMessage(list.get(position).getName() + " Completions (Click any you want to delete)");
@@ -143,36 +115,4 @@ public class AllHabitsActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-//    private void loadFromFile() {
-//        //ArrayList<String> tweets = new ArrayList<String>();
-//        try {
-//            FileInputStream fis = openFileInput(HabitListController.getFILENAME());
-//            BufferedReader in = new BufferedReader(new InputStreamReader(fis));
-//            Gson gson = new Gson();
-//            //Code taken from http://stackoverflow.com/questions/12384064/gson-convert-from-json-to-a-typed-arraylistt September 22, 2016
-//            Type listType =new TypeToken<ArrayList<Habit>>(){}.getType();
-//            HabitListController.setHabitList((HabitList) gson.fromJson(in, listType));
-//        } catch (FileNotFoundException e) {
-//            // TODO Auto-generated catch block
-//            saveInFile();
-//            //throw new RuntimeException();
-//        }
-//    }
-//
-//    private void saveInFile() {
-//        try {
-//
-//            FileOutputStream fos = openFileOutput(HabitListController.getFILENAME(), 0);
-//            OutputStreamWriter writer = new OutputStreamWriter(fos);
-//            Gson gson = new Gson();
-//            gson.toJson(HabitListController.getHabitList(), writer);
-//            writer.flush();
-//        } catch (FileNotFoundException e) {
-//            // TODO Auto-generated catch block
-//            throw new RuntimeException();
-//        } catch (IOException e) {
-//            // TODO Auto-generated catch block
-//            throw new RuntimeException();
-//        }
-//    }
 }

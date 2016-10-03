@@ -1,8 +1,5 @@
 package com.example.derekshultz.as1;
 
-import android.widget.CheckBox;
-import android.widget.EditText;
-
 /**
  * Created by derekshultz on 2016-10-02.
  */
@@ -11,7 +8,6 @@ public class HabitListController {
 
     // Lazy Singleton
     private static HabitList habitList = null;
-//    private static final String FILENAME = "file.sav";
 
     static public HabitList getHabitList() {
         if (habitList == null) {
@@ -23,10 +19,6 @@ public class HabitListController {
     static public void setHabitList(HabitList habitList) {
         HabitListController.habitList = habitList;
     }
-
-//    static public String getFILENAME() {
-//        return FILENAME;
-//    }
 
     public void addHabit(Habit habit) throws DuplicateHabitNameException {
         try {

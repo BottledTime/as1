@@ -2,7 +2,6 @@ package com.example.derekshultz.as1;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Timer;
 
 /**
  * Created by derekshultz on 2016-10-01.
