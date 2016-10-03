@@ -30,7 +30,7 @@ public class AddHabitActivity extends AppCompatActivity {
     }
 
     public void goToAllHabits(MenuItem item) {
-        Toast.makeText(this, "All/Add Habits", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "All Habits", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(AddHabitActivity.this, AllHabitsActivity.class);
         startActivity(intent);
     }
