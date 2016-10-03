@@ -11,6 +11,17 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -21,6 +32,7 @@ public class AddHabitActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_habit);
+//        loadFromFile();
     }
 
     @Override
@@ -33,12 +45,6 @@ public class AddHabitActivity extends AppCompatActivity {
     public void goToAllHabits(MenuItem item) {
         Toast.makeText(this, "All/Add Habits", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(AddHabitActivity.this, AllHabitsActivity.class);
-        startActivity(intent);
-    }
-
-    public void goToTodaysHabits(MenuItem item) {
-        Toast.makeText(this, "Today\'s Habits", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(AddHabitActivity.this, TodaysHabitsActivity.class);
         startActivity(intent);
     }
 
@@ -106,6 +112,40 @@ public class AddHabitActivity extends AppCompatActivity {
         catch (DuplicateHabitNameException arg) {
             Toast.makeText(this, "There Is Already A Habit With This Name", Toast.LENGTH_LONG).show();
         }
+//        saveInFile();
     }
+
+//    private void loadFromFile() {
+//        //ArrayList<String> tweets = new ArrayList<String>();
+//        try {
+//            FileInputStream fis = openFileInput(HabitListController.getFILENAME());
+//            BufferedReader in = new BufferedReader(new InputStreamReader(fis));
+//            Gson gson = new Gson();
+//            //Code taken from http://stackoverflow.com/questions/12384064/gson-convert-from-json-to-a-typed-arraylistt September 22, 2016
+//            Type listType =new TypeToken<ArrayList<Habit>>(){}.getType();
+//            HabitListController.setHabitList((HabitList) gson.fromJson(in, listType));
+//        } catch (FileNotFoundException e) {
+//            // TODO Auto-generated catch block
+//            saveInFile();
+//            //throw new RuntimeException();
+//        }
+//    }
+//
+//    private void saveInFile() {
+//        try {
+//
+//            FileOutputStream fos = openFileOutput(HabitListController.getFILENAME(), 0);
+//            OutputStreamWriter writer = new OutputStreamWriter(fos);
+//            Gson gson = new Gson();
+//            gson.toJson(HabitListController.getHabitList(), writer);
+//            writer.flush();
+//        } catch (FileNotFoundException e) {
+//            // TODO Auto-generated catch block
+//            throw new RuntimeException();
+//        } catch (IOException e) {
+//            // TODO Auto-generated catch block
+//            throw new RuntimeException();
+//        }
+//    }
 
 }

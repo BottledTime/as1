@@ -46,4 +46,14 @@ public class HabitList {
     public void removeListener(Listener l) {
         listeners.remove(l);
     }
+
+    public void addHabitCompletion(Habit habit) {
+        habit.addCompletion();
+        notifyListeners();
+    }
+
+    public void removeHabitCompletion(Habit habit, String completionString) {
+        habit.removeCompletion(completionString);
+        notifyListeners();
+    }
 }
