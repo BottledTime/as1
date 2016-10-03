@@ -28,7 +28,12 @@ public class HabitTest {
         daysOfWeek = new ArrayList<String>();
         daysOfWeek.add("Monday");
         startDate = Calendar.getInstance();
-        habit = new Habit(habitName, daysOfWeek, startDate);
+        try {
+            habit = new Habit(habitName, daysOfWeek, startDate);
+        }
+        catch (NoHabitNameException | NoDayOfWeekException arg){
+            assertTrue(false);
+        }
     }
 
     @After
@@ -41,8 +46,11 @@ public class HabitTest {
             Habit badHabit = new Habit("", daysOfWeek, startDate);
             assertTrue(false);
         }
-        catch (IllegalArgumentException arg) {
+        catch (NoHabitNameException arg) {
             assertTrue(true);
+        }
+        catch (NoDayOfWeekException arg) {
+            assertTrue(false);
         }
     }
 
@@ -52,7 +60,10 @@ public class HabitTest {
             Habit badHabit = new Habit(habitName, new ArrayList<String>(), startDate);
             assertTrue(false);
         }
-        catch (IllegalArgumentException arg) {
+        catch (NoHabitNameException arg) {
+            assertTrue(false);
+        }
+        catch (NoDayOfWeekException arg) {
             assertTrue(true);
         }
     }
@@ -77,7 +88,7 @@ public class HabitTest {
 
     @Test
     public void getCompletionsList() {
-        assertEquals(habit.getCompletionsList().getClass(), new ArrayList<String>().getClass());
+        assertEquals(habit.getCompletionsList().getClass(), ArrayList.class);
         assertEquals(habit.getCompletionsList().size(), 0);
     }
 
@@ -114,8 +125,13 @@ public class HabitTest {
 
     @Test
     public void getStartDate() {
-        Habit habit2 = new Habit("Test2", daysOfWeek, Calendar.getInstance());
-        assertEquals(habit2.getStartDate(), Calendar.getInstance());
+        try {
+            Habit habit2 = new Habit("Test2", daysOfWeek, Calendar.getInstance());
+            assertEquals(habit2.getStartDate(), Calendar.getInstance());
+        }
+        catch (NoHabitNameException | NoDayOfWeekException arg) {
+           assertTrue(false);
+        }
     }
 
 }

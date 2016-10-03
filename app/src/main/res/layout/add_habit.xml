@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.derekshultz.as1.AddHabitActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/addHabitsTitleText"
+        android:id="@+id/allHabitsPageTitle"
+        android:textSize="30sp"
+        android:layout_alignParentTop="false" />
+
+    <Button
+        android:text="@string/addHabitsTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/addHabitButton"
+        android:onClick="addHabitAction" />
+
+    <TextView
+        android:text="@string/daysOfWeekPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/daysOfWeekPromptView"
+        android:layout_below="@+id/enterHabitName"
+        android:layout_alignStart="@+id/enterHabitName" />
+
+    <TextView
+        android:text="@string/startDatePrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/startDatePromptView"
+        android:layout_marginBottom="14dp"
+        android:layout_above="@+id/startDatePicker"
+        android:layout_alignStart="@+id/daysOfWeekPromptView" />
+
+    <DatePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/startDatePicker"
+        android:calendarViewShown="false"
+        android:layout_marginBottom="39dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/startDatePromptView" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/daysOfWeekPromptView"
+        android:layout_alignParentEnd="true"
+        android:weightSum="1"
+        android:layout_above="@+id/startDatePromptView">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <CheckBox
+                android:text="@string/monday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mondayCheckBox" />
+
+            <CheckBox
+                android:text="@string/wednesday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/wednesdayCheckBox" />
+
+            <CheckBox
+                android:text="@string/friday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/fridayCheckBox" />
+
+            <CheckBox
+                android:text="@string/sunday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/sundayCheckBox" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="199dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <CheckBox
+                android:text="@string/tuesday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tuesdayCheckBox" />
+
+            <CheckBox
+                android:text="@string/thursday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/thursdayCheckBox" />
+
+            <CheckBox
+                android:text="@string/saturday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/saturdayCheckBox" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:text="@string/namePromptText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:id="@+id/habitNamePromptView"
+        android:layout_below="@+id/allHabitsPageTitle"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/enterHabitName"
+        android:layout_below="@+id/habitNamePromptView"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="8dp"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

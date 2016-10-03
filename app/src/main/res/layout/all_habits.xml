@@ -17,26 +17,13 @@
         android:layout_height="fill_parent"
         android:id="@+id/allHabitsListView"
         android:clickable="true"
-        android:layout_below="@+id/allHabitsPageTitle"
-        android:layout_alignEnd="@+id/addHabitButton"
-        android:layout_above="@+id/addHabitButton" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/addHabitButtonText"
-        android:id="@+id/addHabitButton"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_gravity="right"
-        android:textSize="20sp" />
+        android:layout_below="@+id/allHabitsPageTitle" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/allAddHabitsTitleText"
+        android:text="@string/allHabitsTitleText"
         android:id="@+id/allHabitsPageTitle"
         android:textSize="30sp"
         android:layout_alignParentTop="false" />

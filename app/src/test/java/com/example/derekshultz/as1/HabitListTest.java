@@ -25,7 +25,12 @@ public class HabitListTest {
         daysOfWeek = new ArrayList<String>();
         daysOfWeek.add("Monday");
         startDate = Calendar.getInstance();
-        habit = new Habit(habitName, daysOfWeek, startDate);
+        try {
+            habit = new Habit(habitName, daysOfWeek, startDate);
+        }
+        catch (NoHabitNameException | NoDayOfWeekException arg) {
+            assertTrue(false);
+        }
     }
 
     @After
@@ -39,7 +44,12 @@ public class HabitListTest {
 
     @Test
     public void addHabit() {
-        habitList.addHabit(habit);
+        try {
+            habitList.addHabit(habit);
+        }
+        catch (DuplicateHabitNameException arg) {
+            assertTrue(false);
+        }
         assertEquals(habitList.getHabits().size(), 1);
         assertTrue(habitList.getHabits().contains(habit));
     }
@@ -51,7 +61,7 @@ public class HabitListTest {
             habitList.addHabit(habit);
             assertTrue(false);
         }
-        catch (IllegalArgumentException arg) {
+        catch (DuplicateHabitNameException arg) {
             assertTrue(true);
         }
         assertEquals(habitList.getHabits().size(), 1);
@@ -62,15 +72,23 @@ public class HabitListTest {
             habitList.addHabit(anotherHabit);
             assertTrue(false);
         }
-        catch (IllegalArgumentException arg) {
+        catch (DuplicateHabitNameException arg) {
             assertTrue(true);
+        }
+        catch (NoHabitNameException | NoDayOfWeekException arg) {
+            assertTrue(false);
         }
     }
 
     @Test
     public void removeHabit() {
         assertEquals(habitList.getHabits().size(), 0);
-        habitList.addHabit(habit);
+        try {
+            habitList.addHabit(habit);
+        }
+        catch (DuplicateHabitNameException arg) {
+            assertTrue(false);
+        }
         assertEquals(habitList.getHabits().size(), 1);
         assertTrue(habitList.getHabits().contains(habit));
         habitList.removeHabit(habit);

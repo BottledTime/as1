@@ -15,9 +15,13 @@ public class Habit {
     private ArrayList<String> completionsList;
     private int numberOfFulfilments;
 
-    public Habit(String habitName, ArrayList<String> daysOfWeek, Calendar startDate) throws IllegalArgumentException {
-        if(habitName == "" || daysOfWeek.isEmpty()) {
-            throw new IllegalArgumentException();
+    public Habit(String habitName, ArrayList<String> daysOfWeek, Calendar startDate)
+            throws NoHabitNameException, NoDayOfWeekException {
+        if (habitName.equals("")) {
+            throw new NoHabitNameException();
+        }
+        if (daysOfWeek.isEmpty()) {
+            throw new NoDayOfWeekException();
         }
         this.habitName = habitName;
         this.daysOfWeek = daysOfWeek;

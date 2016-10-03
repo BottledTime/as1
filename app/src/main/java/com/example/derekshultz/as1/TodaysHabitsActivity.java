@@ -40,9 +40,15 @@ public class TodaysHabitsActivity extends AppCompatActivity {
         return true;
     }
 
-    public void goToAllAddHabits(MenuItem item) {
-        Toast.makeText(this, "All/Add Habits", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(TodaysHabitsActivity.this, AllAddHabitsActivity.class);
+    public void goToAllHabits(MenuItem item) {
+        Toast.makeText(this, "All Habits", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(TodaysHabitsActivity.this, AllHabitsActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToAddHabits(MenuItem item) {
+        Toast.makeText(this, "Add Habit", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(TodaysHabitsActivity.this, AddHabitActivity.class);
         startActivity(intent);
     }
 }

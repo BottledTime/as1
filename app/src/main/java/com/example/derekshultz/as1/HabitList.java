@@ -12,10 +12,10 @@ public class HabitList {
         habitList = new ArrayList<Habit>();
     }
 
-    public void addHabit(Habit habit) {
+    public void addHabit(Habit habit) throws DuplicateHabitNameException {
         for (Habit aHabit: habitList) {
             if (aHabit.getName().equals(habit.getName())) {
-                throw new IllegalArgumentException();
+                throw new DuplicateHabitNameException();
             }
         }
         habitList.add(habit);

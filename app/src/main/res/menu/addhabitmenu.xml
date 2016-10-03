@@ -6,4 +6,9 @@
         android:title="@string/todaysHabitsTitleText"
         android:onClick="goToTodaysHabits" />
 
+    <item
+        android:id="@+id/allAddHabitsItem"
+        android:title="@string/allHabitsTitleText"
+        android:onClick="goToAllHabits" />
+
 </menu>
