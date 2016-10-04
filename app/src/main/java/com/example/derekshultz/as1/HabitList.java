@@ -5,6 +5,9 @@ import java.util.ArrayList;
 /**
  * Created by derekshultz on 2016-10-01.
  */
+
+// This is another class that's meant to be a model object. It holds an array of all the habits
+// and contains methods with which to manipulate the list.
 public class HabitList {
     private ArrayList<Habit> habitList;
     private ArrayList<Listener> listeners;

@@ -14,6 +14,15 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+// This class is meant to be a controller/view object since the user interacts with it and
+// it takes in and passes along user input to HabitListController.
+//
+// The purpose of this class is to provide a page at which users can enter habit information and
+// get feedback if any of their inputs were incorrect (ex. didn't hava a name, didn't have any
+// days of the week, had same name as another habit, etc.)
+//
+// The biggest outstanding issue with this activity is that the data is not saved persistently yet.
+// I tried a few different ways, but just couldn't quite get it to work in time.
 public class AddHabitActivity extends AppCompatActivity {
 
     @Override

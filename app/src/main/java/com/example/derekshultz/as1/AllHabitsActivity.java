@@ -20,6 +20,20 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
+
+// This class is meant to be a controller/view object since the user interacts with it and
+// it takes in and passes along user input to HabitListController.
+//
+// The purpose of this class was to give the user a place to see all of their habits in a list. They
+// can then click on one shortly to indicate that they've recently completed the habit, or they can
+// hold it down for a dialog to show up. From the dialog, they should be able to see the habits
+// completions and they have the choice to delete the habit, delete selected completions or cancel.
+//
+// One outstanding issue with this is that, despite the author's best efforts so far, the dialogue
+// does not currently display a scrollable list of clickable completions for the current habit, as
+// intended. This means that the user can neither see nor delete their habit completions.
+// Another outstanding issue is that, like AddHabitActivity, the changes made by this activity are
+// also not persistent.
 public class AllHabitsActivity extends AppCompatActivity {
 
     @Override

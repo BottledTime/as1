@@ -10,6 +10,7 @@ import static org.junit.Assert.*;
 /**
  * Created by derekshultz on 2016-10-01.
  */
+// These are test cases for the model object Habit
 public class HabitTest {
 
     private Habit habit;
